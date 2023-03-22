@@ -434,7 +434,7 @@ module e203_ifu_ifetch(
   wire [`E203_PC_SIZE-1:0] pc_nxt_pre;
   wire [`E203_PC_SIZE-1:0] pc_nxt;
 
-  wire bjp_req = minidec_bjp & prdt_taken;
+  wire bjp_req = minidec_bjp & prdt_taken;           //b*** 指令而且需要跳转
 
   wire ifetch_replay_req;
 
@@ -458,7 +458,7 @@ module e203_ifu_ifetch(
                                ifu_reset_req   ? `E203_PC_SIZE'b0 :
                                                  pc_incr_ofst ;
 
-  assign ifu_req_seq = (~pipe_flush_req_real) & (~ifu_reset_req) & (~ifetch_replay_req) & (~bjp_req);
+  assign ifu_req_seq = (~pipe_flush_req_real) & (~ifu_reset_req) & (~ifetch_replay_req) & (~bjp_req);  //顺序读取指令
   assign ifu_req_seq_rv32 = minidec_rv32;
   assign ifu_req_last_pc = pc_r;
 

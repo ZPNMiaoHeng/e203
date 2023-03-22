@@ -477,6 +477,8 @@ module e203_itcm_ctrl(
   wire [`E203_ITCM_DATA_WIDTH-1:0] sram_icb_rsp_rdata;
   wire sram_icb_rsp_err;
 
+//  The icb_ecc_ctrl module control the ICB access requests to SRAM 
+
   `ifndef E203_HAS_ECC //{
   sirv_sram_icb_ctrl #(
       .DW     (`E203_ITCM_DATA_WIDTH),

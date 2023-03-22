@@ -49,7 +49,7 @@ module e203_exu_decode(
   output [`E203_RFIDX_WIDTH-1:0] dec_rs1idx,
   output [`E203_RFIDX_WIDTH-1:0] dec_rs2idx,
   output [`E203_RFIDX_WIDTH-1:0] dec_rdidx,
-  output [`E203_DECINFO_WIDTH-1:0] dec_info,  
+  output [`E203_DECINFO_WIDTH-1:0] dec_info,     // 该指令其他信息，打包位信息总线 info bus；
   output [`E203_XLEN-1:0] dec_imm,
   output [`E203_PC_SIZE-1:0] dec_pc,
   output dec_misalgn,
